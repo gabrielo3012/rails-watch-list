@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @list.name %></h1>
+
+<ul>
+  <% @list.movies.each do |movie| %>
+    <li>
+      <%= movie.title %>
+      <%= movie.overview %>
+      <%= movie.rating %>
+      <%# link_to 'Movies Info', movie.poster_url, class:'btn btn-primary' %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
